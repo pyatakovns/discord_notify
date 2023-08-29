@@ -1,7 +1,6 @@
 #!/bin/bash
 
-case $1 in
-  "success" )
+case $1 in  "success" )
     EMBED_COLOR=3066993
     STATUS_MESSAGE="Passed"
     ARTIFACT_URL="$CI_JOB_URL/artifacts/download"
@@ -41,7 +40,7 @@ fi
 if [ -z $CI_MERGE_REQUEST_ID ]; then
   URL=""
 else
-  URL="$CI_PROJECT_URL/merge_requests/$CI_MERGE_REQUEST_ID"
+  URL="$CI_PROJECT_URL/merge_requests/$CI_MERGE_REQUEST_IID"
 fi
 
 TIMESTAMP=$(date --utc +%FT%TZ)
